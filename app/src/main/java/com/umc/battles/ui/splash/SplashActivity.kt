@@ -19,7 +19,7 @@ class SplashActivity: BaseActivity<ActivitySplashBinding>(ActivitySplashBinding:
         observerSetting()
 
         Handler(Looper.getMainLooper()).postDelayed({
-            authViewModel.autoLogin()
+            //authViewModel.autoLogin()
         }, 2000)
     }
 
