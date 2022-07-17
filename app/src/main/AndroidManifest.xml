@@ -14,6 +14,12 @@
         android:theme="@style/Theme.Battles"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
             android:name="com.umc.battles.ui.splash.SplashActivity"
             android:exported="true">
             <intent-filter>
