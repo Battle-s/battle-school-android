@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -71,4 +72,7 @@ dependencies {
     //Navigation
     implementation "androidx.navigation:navigation-fragment-ktx:$navi_version"
     implementation "androidx.navigation:navigation-ui-ktx:$navi_version"
+
+    //google
+    implementation "com.google.android.gms:play-services-auth:$google_version"
 }

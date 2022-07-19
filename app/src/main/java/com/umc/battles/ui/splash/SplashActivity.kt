@@ -7,10 +7,10 @@ import androidx.lifecycle.ViewModelProvider
 import com.umc.battles.data.NetworkState
 import com.umc.battles.databinding.ActivitySplashBinding
 import com.umc.battles.ui.BaseActivity
+import com.umc.battles.ui.auth.LoginActivity
 import com.umc.battles.viewmodel.AuthViewModel
 
-
-class SplashActivity: BaseActivity<ActivitySplashBinding>(ActivitySplashBinding::inflate){
+class SplashActivity : BaseActivity<ActivitySplashBinding>(ActivitySplashBinding::inflate) {
 
     lateinit var authViewModel: AuthViewModel
 
@@ -19,17 +19,19 @@ class SplashActivity: BaseActivity<ActivitySplashBinding>(ActivitySplashBinding:
         observerSetting()
 
         Handler(Looper.getMainLooper()).postDelayed({
+            startActivityWithClear(LoginActivity::class.java)
             //authViewModel.autoLogin()
-        }, 2000)
+        }, 1000)
     }
 
     private fun viewModelSetting() {
         authViewModel = ViewModelProvider(this)
             .get(AuthViewModel::class.java)
     }
-    private fun observerSetting(){
+
+    private fun observerSetting() {
         authViewModel.networkState.observe(this, Observer {
-            when(it){
+            when (it) {
                 NetworkState.ERROR -> {
                     showToast("네트워크에 문제가 발생했습니다.")
                     finish()
@@ -39,7 +41,7 @@ class SplashActivity: BaseActivity<ActivitySplashBinding>(ActivitySplashBinding:
             }
         })
         authViewModel.authResponse.observe(this, Observer {
-            when(it.code){
+            when (it.code) {
             }
         })
     }
