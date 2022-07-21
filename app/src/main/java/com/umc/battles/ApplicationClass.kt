@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit
 class ApplicationClass : Application() {
     companion object{
         const val X_ACCESS_TOKEN: String = "X-ACCESS-TOKEN"         // JWT Token Key
-        const val TAG: String = "DIARY-APP"                      // Log, SharedPreference
+        const val TAG: String = "BATTLE-APP"                      // Log, SharedPreference
         const val APP_DATABASE = "$TAG-DB"
 
         const val DEV_URL: String = "https://www.naver.com";       // 테스트 서버 주소

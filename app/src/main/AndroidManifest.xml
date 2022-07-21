@@ -14,10 +14,10 @@
         android:theme="@style/Theme.Battles"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.main.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".ui.auth.LoginActivity"
             android:exported="false" />
         <activity
             android:name="com.umc.battles.ui.splash.SplashActivity"
