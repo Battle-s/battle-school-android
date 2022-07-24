@@ -9,7 +9,7 @@ import com.umc.battles.data.local.dao.UserDao
 import com.umc.battles.data.local.entities.User
 
 @Database(entities = [User::class], version = 1)
-abstract class AppDatabase: RoomDatabase() {
+abstract class AppDatabase : RoomDatabase() {
     abstract fun userDao(): UserDao
 
     companion object {
@@ -18,7 +18,7 @@ abstract class AppDatabase: RoomDatabase() {
         @Synchronized
         fun getInstance(context: Context): AppDatabase? {
             if (instance == null) {
-                synchronized(AppDatabase::class){
+                synchronized(AppDatabase::class) {
                     instance = Room.databaseBuilder(
                         context.applicationContext,
                         AppDatabase::class.java,

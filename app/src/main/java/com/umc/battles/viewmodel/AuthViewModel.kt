@@ -7,21 +7,16 @@ import com.umc.battles.data.local.entities.User
 import com.umc.battles.data.remote.auth.AuthNetworkDataSource
 import com.umc.battles.data.remote.auth.vo.AuthResponse
 
-class AuthViewModel:ViewModel() {
+class AuthViewModel : ViewModel() {
     private val authNetworkDataSource = AuthNetworkDataSource()
 
-    var authResponse: LiveData<AuthResponse>
-            = authNetworkDataSource.downloadAuthResponse
+    var authResponse: LiveData<AuthResponse> = authNetworkDataSource.downloadAuthResponse
 
-    var networkState: LiveData<NetworkState>
-            = authNetworkDataSource.networkState
+    var networkState: LiveData<NetworkState> = authNetworkDataSource.networkState
 
-    fun autoLogin()
-            = authNetworkDataSource.autoLogin()
+    fun autoLogin() = authNetworkDataSource.autoLogin()
 
-    fun login(user: User)
-            = authNetworkDataSource.login(user)
+    fun login(user: User) = authNetworkDataSource.login(user)
 
-    fun signUp(user: User)
-            = authNetworkDataSource.signUp(user)
+    fun signUp(user: User) = authNetworkDataSource.signUp(user)
 }

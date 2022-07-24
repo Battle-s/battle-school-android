@@ -9,7 +9,7 @@ data class User(
     @SerializedName("email") val email: String,
     @SerializedName("password") val password: String,
     @SerializedName("name") val name: String
-){
+) {
     @PrimaryKey(autoGenerate = true)
     var id: Int = 0
 }

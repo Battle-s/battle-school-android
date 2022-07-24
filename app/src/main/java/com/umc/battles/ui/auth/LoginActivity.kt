@@ -9,8 +9,10 @@ import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
+import com.umc.battles.ApplicationClass.Companion.TAG
 import com.umc.battles.databinding.ActivityLoginBinding
 import com.umc.battles.ui.BaseActivity
+import com.umc.battles.ui.auth.bottomsheet.SignUpFragment
 
 class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::inflate) {
 
@@ -23,6 +25,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
     //private val WEB_CLIENT_ID = "762666871978-2tq7fs72c03ub8ctj74luf07qfjjj226.apps.googleusercontent.com"
 
     private lateinit var googleSignResultLauncher: ActivityResultLauncher<Intent>
+    private val signUpBottomSheet = SignUpFragment()
 
     override fun initAfterBinding() {
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -39,7 +42,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
         }
 
         binding.btnGoogleLogin.setOnClickListener {
-            Log.d("Tester", "intentgo")
+            signUpBottomSheet.show(supportFragmentManager, TAG)
             val signIntent: Intent = mGoogleSignInClient.signInIntent
             googleSignResultLauncher.launch(signIntent)
         }
