@@ -19,7 +19,7 @@ class AuthNetworkDataSource {
 
     private val authService = retrofit.create(AuthRetrofitInterface::class.java)
 
-    fun login(user: User){
+    fun login(user: User) {
         val loginCall = authService.login(user)
         _networkState.postValue(NetworkState.LOADING)
 
@@ -36,7 +36,7 @@ class AuthNetworkDataSource {
         })
     }
 
-    fun autoLogin(){
+    fun autoLogin() {
         val autoLoginCall = authService.autoLogin()
         _networkState.postValue(NetworkState.LOADING)
 
@@ -52,6 +52,7 @@ class AuthNetworkDataSource {
             }
         })
     }
+
     fun signUp(user: User) {
         val signUpCall = authService.signUp(user)
         _networkState.postValue(NetworkState.LOADING)
