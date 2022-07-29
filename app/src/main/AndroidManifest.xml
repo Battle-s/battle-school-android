@@ -2,7 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.umc.battles">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAG" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA"/>
 
     <application
         android:name="com.umc.battles.ApplicationClass"
@@ -14,10 +17,16 @@
         android:theme="@style/Theme.Battles"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".ui.main.MainActivity"
+            android:name=".ProfileSettingActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.auth.LoginActivity"
+            android:name=".EditProActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
             android:exported="false" />
         <activity
             android:name="com.umc.battles.ui.splash.SplashActivity"
