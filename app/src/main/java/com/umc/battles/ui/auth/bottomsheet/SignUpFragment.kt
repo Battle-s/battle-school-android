@@ -4,23 +4,23 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.DialogFragment
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.umc.battles.databinding.FragmentSignUpBinding
-import com.umc.battles.ui.BaseActivity
 import com.umc.battles.ui.auth.bottomsheet.adapter.SignUpContentVPAdapter
-import com.umc.battles.ui.main.MainActivity
 
 
 class SignUpFragment : BottomSheetDialogFragment() {
 
     private lateinit var binding: FragmentSignUpBinding
+    var dismissCallback: () -> Unit = {}
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentSignUpBinding.inflate(inflater, container, false)
 
         return binding.root
@@ -63,7 +63,7 @@ class SignUpFragment : BottomSheetDialogFragment() {
             val currentIdx = binding.vpSignupContent.currentItem
             binding.vpSignupContent.currentItem = (currentIdx + 1)
         } else {
-            (requireActivity() as BaseActivity<*>).startActivityWithClear(MainActivity::class.java)
+            dismissCallback()
         }
     }
 }
