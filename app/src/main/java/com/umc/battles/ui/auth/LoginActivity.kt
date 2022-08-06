@@ -13,6 +13,7 @@ import com.umc.battles.ApplicationClass.Companion.TAG
 import com.umc.battles.databinding.ActivityLoginBinding
 import com.umc.battles.ui.BaseActivity
 import com.umc.battles.ui.auth.bottomsheet.SignUpFragment
+import com.umc.battles.ui.main.MainActivity
 
 class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::inflate) {
 
@@ -25,7 +26,8 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
     //private val WEB_CLIENT_ID = "762666871978-2tq7fs72c03ub8ctj74luf07qfjjj226.apps.googleusercontent.com"
 
     private lateinit var googleSignResultLauncher: ActivityResultLauncher<Intent>
-    private val signUpBottomSheet = SignUpFragment()
+    private val signUpBottomSheet =
+        SignUpFragment().apply { dismissCallback = this@LoginActivity::dismissBottomSheet }
 
     override fun initAfterBinding() {
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -42,7 +44,6 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
         }
 
         binding.btnGoogleLogin.setOnClickListener {
-            signUpBottomSheet.show(supportFragmentManager, TAG)
             val signIntent: Intent = mGoogleSignInClient.signInIntent
             googleSignResultLauncher.launch(signIntent)
         }
@@ -52,8 +53,10 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
         try {
             val account = completedTask.getResult(ApiException::class.java)
             val email = account?.email.toString()
+            startActivityWithClear(MainActivity::class.java)
         } catch (e: ApiException) {
             Log.e("Google account", "signInResult:failed Code = " + e.statusCode)
+            signUpBottomSheet.show(supportFragmentManager, TAG)
         }
     }
 
@@ -66,5 +69,10 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
         } else {
             Log.e("Google account", "로그인 완료된 상태")
         }
+    }
+
+    private fun dismissBottomSheet() {
+        Log.d(TAG, "dismissBottomSheet: Dismiss")
+        signUpBottomSheet.dismiss()
     }
 }

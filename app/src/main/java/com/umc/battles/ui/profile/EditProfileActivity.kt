@@ -17,34 +17,34 @@ class EditProfileActivity : AppCompatActivity() {
     lateinit var binding: ActivityEditProfileBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding=ActivityEditProfileBinding.inflate(layoutInflater)
+        binding = ActivityEditProfileBinding.inflate(layoutInflater)
         setContentView(R.layout.activity_edit_profile)
-        binding.cameraBackground.setOnClickListener{openGallery()}
-        }
+        binding.cameraBackground.setOnClickListener { openGallery() }
+    }
 
-    private fun openGallery(){
-        val intent:Intent = Intent(Intent.ACTION_GET_CONTENT)
+    private fun openGallery() {
+        val intent: Intent = Intent(Intent.ACTION_GET_CONTENT)
         intent.setType("image/*")
-        startActivityForResult(intent,OPEN_GALLERY)
+        startActivityForResult(intent, OPEN_GALLERY)
     }
 
     @Override
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        if(resultCode == Activity.RESULT_OK){
-            if(requestCode == OPEN_GALLERY){
-                var currentImageUrl : Uri? = data?.data
-                try{
+        if (resultCode == Activity.RESULT_OK) {
+            if (requestCode == OPEN_GALLERY) {
+                var currentImageUrl: Uri? = data?.data
+                try {
                     Glide.with(this).load(currentImageUrl).into(binding.ivProfile)
                     //val bitmap = MediaStore.Images.Media.getBitmap(contentResolver,currentImageUrl)
                     //binding.ivProfile.setImageBitmap(bitmap)
-                }catch (e:Exception){
+                } catch (e: Exception) {
                     e.printStackTrace()
                 }
             }
-        }else{
-            Log.d("ActivityResult","somthing wrong")
+        } else {
+            Log.d("ActivityResult", "somthing wrong")
         }
     }
 
