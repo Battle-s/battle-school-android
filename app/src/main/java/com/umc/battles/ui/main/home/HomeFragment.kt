@@ -4,16 +4,14 @@ import androidx.recyclerview.widget.PagerSnapHelper
 import com.umc.battles.databinding.FragmentHomeBinding
 import com.umc.battles.ui.BaseFragment
 import com.umc.battles.ui.main.home.adapter.RVImageAdapter
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
 
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate) {
 
     private lateinit var rvImageAdapter: RVImageAdapter
     private val autoScrollDelayTime = 3000L
+    private var job: Job? = null
 
     override fun initAfterBinding() {
         initView()
@@ -38,7 +36,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
         )
         rvImageAdapter.registerAdapterDataObserver(binding.ci2PopularityContestImage.adapterDataObserver)
 
-        CoroutineScope(Dispatchers.Main).launch {
+        job = CoroutineScope(Dispatchers.Main).launch {
             while (true) {
                 delay(autoScrollDelayTime)
                 val size = binding.rvPopularityContestImage.adapter!!.itemCount
@@ -51,6 +49,11 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
                 binding.rvPopularityContestImage.smoothScrollToPosition((currentIdx + 1) % size)
             }
         }
+    }
+
+    override fun onDestroyView() {
+        job?.cancel()
+        super.onDestroyView()
     }
 
     private val dumpList = listOf(

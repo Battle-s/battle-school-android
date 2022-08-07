@@ -4,12 +4,12 @@
     <item
         android:id="@+id/fragment_home"
         android:icon="@drawable/ic_home_24dp"
-        android:title="Home" />
+        android:title="홈" />
 
     <item
         android:id="@+id/fragment_board"
         android:icon="@drawable/ic_chat_24dp"
-        android:title="Board" />
+        android:title="게시판" />
 
     <item
         android:id="@+id/fragment_battle"
@@ -18,11 +18,11 @@
     <item
         android:id="@+id/fragment_chart"
         android:icon="@drawable/ic_chart_24dp"
-        android:title="Chart" />
+        android:title="랭킹" />
 
     <item
         android:id="@+id/fragment_profile"
         android:icon="@drawable/ic_person_24dp"
-        android:title="Profile" />
+        android:title="설정" />
 
 </menu>
