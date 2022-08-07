@@ -18,8 +18,26 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
         val navController = navHostFragment.navController
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
-                R.id.fragment_battle -> binding.fabBattle.isSelected = true
-                else -> binding.fabBattle.isSelected = false
+                R.id.fragment_battle -> {
+                    binding.tvMenuTitle.text = "BATTLE'S"
+                    binding.fabBattle.isSelected = true
+                }
+                R.id.fragment_chart -> {
+                    binding.tvMenuTitle.text = "랭킹"
+                    binding.fabBattle.isSelected = false
+                }
+                R.id.fragment_board -> {
+                    binding.tvMenuTitle.text = "게시판"
+                    binding.fabBattle.isSelected = false
+                }
+                R.id.fragment_profile -> {
+                    binding.tvMenuTitle.text = "마이프로필"
+                    binding.fabBattle.isSelected = false
+                }
+                else -> {
+                    binding.tvMenuTitle.text = "BATTLE'S"
+                    binding.fabBattle.isSelected = false
+                }
             }
         }
 
