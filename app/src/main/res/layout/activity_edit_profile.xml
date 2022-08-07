@@ -103,50 +103,55 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="대학교" />
+
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="대학교"/>
+            android:text="대학교" />
 
         <TextView
             android:id="@+id/Major"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="학과" />
+
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="학과"/>
+            android:text="학과" />
 
         <TextView
             android:id="@+id/Student_ID"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="학번" />
+
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="학번"/>
+            android:text="학번" />
 
         <TextView
             android:id="@+id/Birthday"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="생년월일" />
+
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="생년월일"/>
+            android:text="생년월일" />
 
         <TextView
             android:id="@+id/Club_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="소속동아리" />
+
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="소속동아리"/>
+            android:text="소속동아리" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

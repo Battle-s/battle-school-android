@@ -75,6 +75,7 @@ dependencies {
     //Navigation
     implementation "androidx.navigation:navigation-fragment-ktx:$navi_version"
     implementation "androidx.navigation:navigation-ui-ktx:$navi_version"
+    implementation "androidx.navigation:navigation-runtime:$navi_version"
 
     //google
     implementation "com.google.android.gms:play-services-auth:$google_version"

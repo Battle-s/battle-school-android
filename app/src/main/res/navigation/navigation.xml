@@ -1,26 +1,30 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_activity_navgraph"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/fragment_home">
 
     <fragment
-        android:id="@+id/homeFragment"
-        android:name="com.umc.battles.ui.main.temp.TempFragment"
-        android:label="homeFragment"/>
+        android:id="@+id/fragment_home"
+        android:name="com.umc.battles.ui.main.home.HomeFragment"
+        android:label="@string/fragment_home" />
 
     <fragment
-        android:id="@+id/searchFragment"
-        android:name="com.umc.battles.ui.main.map.MapFragment"
-        android:label="searchFragment"/>
+        android:id="@+id/fragment_board"
+        android:name="com.umc.battles.ui.main.board.BoardFragment"
+        android:label="@string/fragment_board" />
 
     <fragment
-        android:id="@+id/matchFragment"
-        android:name="com.umc.battles.ui.main.notification.NotificationFragment"
-        android:label="matchFragment"/>
+        android:id="@+id/fragment_battle"
+        android:name="com.umc.battles.ui.main.battle.BattleFragment"
+        android:label="@string/fragment_battle" />
 
     <fragment
-        android:id="@+id/mypageFragment"
-        android:name="com.umc.battles.ui.main.temp.TempFragment"
-        android:label="mypageFragment"/>
+        android:id="@+id/fragment_chart"
+        android:name="com.umc.battles.ui.main.chart.ChartFragment"
+        android:label="@string/fragment_chart" />
+
+    <!--<fragment
+        android:id="@+id/fragment_profile"
+        android:name="com.umc.battles.ui.main.profile.ProfileFragment"
+        android:label="@string/fragment_profile"/>-->
 </navigation>
