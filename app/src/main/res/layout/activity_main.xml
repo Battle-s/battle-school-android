@@ -28,7 +28,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/btn_search"
+            android:id="@+id/btn_profile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
@@ -36,7 +36,7 @@
             android:focusable="true"
             android:src="@drawable/ic_search_24dp"
             android:text="MY"
-            android:textSize="20sp" />
+            android:textSize="18sp" />
     </androidx.appcompat.widget.Toolbar>
 
     <androidx.fragment.app.FragmentContainerView
