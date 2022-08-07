@@ -24,6 +24,11 @@
 
     <!-- 프로필 -->
     <string name="myprofile">마이프로필</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--fragment tag-->
+    <string name="fragment_home">HomeFragment</string>
+    <string name="fragment_board">BoardFragment</string>
+    <string name="fragment_battle">BattleFragment</string>
+    <string name="fragment_chart">ChartFragment</string>
+    <string name="fragment_profile">ProfileFragment</string>
 </resources>

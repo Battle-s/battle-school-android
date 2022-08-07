@@ -8,23 +8,23 @@
         android:strokeColor="#FFB9B9B9"
         android:strokeWidth="0.4"
         android:strokeLineJoin="round"
-        android:pathData="M7.5 12.37H7.48c-0.11 0-0.2 0.09-0.2 0.2v10.29c0 0.11 0.09 0.2 0.2 0.2h4.47c0.1 0 0.2-0.09 0.2-0.2V12.57c0-0.1-0.1-0.2-0.2-0.2H7.5Zm0.8 1.05h2.8V22H8.3v-8.6Z"/>
+        android:pathData="M7.5 12.37H7.48c-0.11 0-0.2 0.09-0.2 0.2v10.29c0 0.11 0.09 0.2 0.2 0.2h4.47c0.1 0 0.2-0.09 0.2-0.2V12.57c0-0.1-0.1-0.2-0.2-0.2H7.5Zm0.8 1.05h2.8V22H8.3v-8.6Z" />
     <path
         android:fillColor="#FFB9B9B9"
         android:strokeColor="#FFB9B9B9"
         android:strokeWidth="0.4"
         android:strokeLineJoin="round"
-        android:pathData="M13.94 6.58c-0.06 0-0.1 0.02-0.15 0.06-0.03 0.04-0.05 0.09-0.05 0.14v16.08c0 0.11 0.09 0.2 0.2 0.2h4.46c0.11 0 0.2-0.09 0.2-0.2V6.79c0-0.1-0.09-0.2-0.2-0.2h-4.46Zm0.83 1.05h2.8v14.38h-2.8V7.63Z"/>
+        android:pathData="M13.94 6.58c-0.06 0-0.1 0.02-0.15 0.06-0.03 0.04-0.05 0.09-0.05 0.14v16.08c0 0.11 0.09 0.2 0.2 0.2h4.46c0.11 0 0.2-0.09 0.2-0.2V6.79c0-0.1-0.09-0.2-0.2-0.2h-4.46Zm0.83 1.05h2.8v14.38h-2.8V7.63Z" />
     <path
         android:fillColor="#FFB9B9B9"
         android:strokeColor="#FFB9B9B9"
         android:strokeWidth="0.4"
         android:strokeLineJoin="round"
-        android:pathData="M25.07 1c0-0.11-0.09-0.2-0.2-0.2H20.4c-0.1 0-0.2 0.09-0.2 0.2v21.86c0 0.11 0.1 0.2 0.2 0.2h4.47c0.11 0 0.2-0.09 0.2-0.2V1Zm-3.83 0.85h2.8V22h-2.8V1.85Z"/>
+        android:pathData="M25.07 1c0-0.11-0.09-0.2-0.2-0.2H20.4c-0.1 0-0.2 0.09-0.2 0.2v21.86c0 0.11 0.1 0.2 0.2 0.2h4.47c0.11 0 0.2-0.09 0.2-0.2V1Zm-3.83 0.85h2.8V22h-2.8V1.85Z" />
     <path
         android:fillColor="#FFB9B9B9"
         android:strokeColor="#FFB9B9B9"
         android:strokeWidth="0.4"
         android:strokeLineJoin="round"
-        android:pathData="M1 18.15c-0.05 0-0.1 0.02-0.14 0.06-0.04 0.04-0.06 0.09-0.06 0.14v4.51c0 0.11 0.09 0.2 0.2 0.2h4.47c0.1 0 0.2-0.09 0.2-0.2v-4.5c0-0.11-0.1-0.2-0.2-0.2H1Zm0.84 1.05h2.79v2.81h-2.8v-2.8Z"/>
+        android:pathData="M1 18.15c-0.05 0-0.1 0.02-0.14 0.06-0.04 0.04-0.06 0.09-0.06 0.14v4.51c0 0.11 0.09 0.2 0.2 0.2h4.47c0.1 0 0.2-0.09 0.2-0.2v-4.5c0-0.11-0.1-0.2-0.2-0.2H1Zm0.84 1.05h2.79v2.81h-2.8v-2.8Z" />
 </vector>
