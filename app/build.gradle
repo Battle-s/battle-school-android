@@ -79,4 +79,7 @@ dependencies {
 
     //google
     implementation "com.google.android.gms:play-services-auth:$google_version"
+
+    //circle indicator for viewpager2
+    implementation 'me.relex:circleindicator:2.1.6'
 }
