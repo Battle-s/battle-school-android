@@ -17,6 +17,9 @@
         android:theme="@style/Theme.Battles"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".ui.main.board.detail.BoardActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.profile.ProfileSettingActivity"
             android:exported="false" />
         <activity
