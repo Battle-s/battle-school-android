@@ -18,12 +18,10 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>(ActivitySplashBinding
     override fun initAfterBinding() {
         viewModelSetting()
         observerSetting()
+        //main 개발을 위한 테스트 코드
         startActivityWithClear(MainActivity::class.java)
 
-        Handler(Looper.getMainLooper()).postDelayed({
-            //startActivityWithClear(LoginActivity::class.java)
-            //authViewModel.autoLogin()
-        }, 1000)
+        Handler(Looper.getMainLooper()).postDelayed({}, 1000)
     }
 
     private fun viewModelSetting() {
