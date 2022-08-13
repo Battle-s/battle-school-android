@@ -31,4 +31,6 @@
     <string name="fragment_battle">BattleFragment</string>
     <string name="fragment_chart">ChartFragment</string>
     <string name="fragment_profile">ProfileFragment</string>
+    <string name="fragment_battle_join">BattleJoinFragment</string>
+    <string name="fragment_club_join">ClubJoinFragment</string>
 </resources>
