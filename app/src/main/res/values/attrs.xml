@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomHomeButton">
+        <attr name="buttonName" format="string" />
+        <attr name="buttonIcon" format="reference" />
+        <attr name="buttonBackground" format="reference" />
+    </declare-styleable>
+</resources>

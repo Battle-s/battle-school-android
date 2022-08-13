@@ -25,7 +25,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_popularity_contest_image"
             android:layout_width="match_parent"
-            android:layout_height="188dp"
+            android:layout_height="230dp"
             android:orientation="horizontal"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintEnd_toEndOf="parent"
@@ -50,93 +50,75 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/rv_popularity_contest_image" />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/btn_club"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="54dp"
-            android:layout_marginEnd="12dp"
-            android:layout_marginBottom="24dp"
+        <com.umc.battles.ui.common.custom.CustomHomeButton
+            android:id="@+id/btn_my_club"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="19dp"
+            android:layout_marginTop="38dp"
             android:clickable="true"
             android:focusable="true"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="10dp"
+            app:buttonBackground="@drawable/btn_club_background_img"
+            app:buttonIcon="@drawable/ic_battle_club"
+            app:buttonName="MY 동아리"
             app:layout_constraintDimensionRatio="1:1"
-            app:layout_constraintEnd_toStartOf="@id/btn_battle"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ci2_popularity_contest_image">
+            app:layout_constraintTop_toBottomOf="@id/ci2_popularity_contest_image" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/btn_club_background_img"
-                android:gravity="center"
-                android:orientation="vertical">
+        <com.umc.battles.ui.common.custom.CustomHomeButton
+            android:id="@+id/btn_my_ranking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="38dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:buttonBackground="@drawable/btn_ranking_background_img"
+            app:buttonIcon="@drawable/ic_battle_ranking"
+            app:buttonName="MY 순위"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@+id/btn_my_battle"
+            app:layout_constraintStart_toEndOf="@id/btn_my_club"
+            app:layout_constraintTop_toBottomOf="@id/ci2_popularity_contest_image" />
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="80dp"
-                    android:src="@drawable/ic_battle_club" />
+        <com.umc.battles.ui.common.custom.CustomHomeButton
+            android:id="@+id/btn_my_battle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="38dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:buttonBackground="@drawable/btn_battle_background_img"
+            app:buttonIcon="@drawable/ic_battle_battle"
+            app:buttonName="MY 경기"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@+id/btn_my_comments"
+            app:layout_constraintStart_toEndOf="@id/btn_my_ranking"
+            app:layout_constraintTop_toBottomOf="@id/ci2_popularity_contest_image" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:text="동아리"
-                    android:textColor="@color/white"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/btn_battle"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="54dp"
-            android:layout_marginEnd="24dp"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="10dp"
+        <com.umc.battles.ui.common.custom.CustomHomeButton
+            android:id="@+id/btn_my_comments"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="38dp"
+            android:layout_marginEnd="19dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:buttonBackground="@drawable/btn_comments_background_img"
+            app:buttonIcon="@drawable/ic_battle_comment"
+            app:buttonName="MY 댓글"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/btn_club"
-            app:layout_constraintTop_toBottomOf="@id/ci2_popularity_contest_image">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/btn_battle_background_img"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="80dp"
-                    android:src="@drawable/ic_battle_battle" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:text="경기"
-                    android:textColor="@color/white"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+            app:layout_constraintStart_toEndOf="@id/btn_my_battle"
+            app:layout_constraintTop_toBottomOf="@id/ci2_popularity_contest_image" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="24dp"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="36dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn_club">
+            app:layout_constraintTop_toBottomOf="@id/btn_my_club">
 
             <include
                 layout="@layout/board_overview_custom_item"
