@@ -2,9 +2,10 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:state_enabled="false">
         <shape>
-            <corners android:radius="28dp" />
-            <solid android:color="@color/cardview_dark_background" />
+            <corners android:radius="20dp" />
+            <solid android:color="@color/transparent" />
+            <stroke android:color="@color/stroke_gray"
+                android:width="0.5dp"/>
         </shape>
     </item>
-    <item android:drawable="@drawable/btn_background_filled"></item>
 </selector>
