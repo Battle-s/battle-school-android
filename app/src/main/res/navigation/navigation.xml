@@ -23,8 +23,8 @@
         android:name="com.umc.battles.ui.main.chart.ChartFragment"
         android:label="@string/fragment_chart" />
 
-    <!--<fragment
+    <fragment
         android:id="@+id/fragment_profile"
         android:name="com.umc.battles.ui.main.profile.ProfileFragment"
-        android:label="@string/fragment_profile"/>-->
+        android:label="@string/fragment_profile"/>
 </navigation>
