@@ -17,6 +17,12 @@
         android:theme="@style/Theme.Battles"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".ui.main.board.CommentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.main.board.WritingActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.main.board.detail.BoardActivity"
             android:exported="false" />
         <activity

@@ -9,6 +9,7 @@
     <color name="white">#FFFFFFFF</color>
 
     <!-- 공통 -->
+    <color name="main_orange">#F15A24</color>
     <color name="primary">#F84D17</color>
     <color name="transparent">#00ff0000</color>
     <color name="form_error">#F44336</color>

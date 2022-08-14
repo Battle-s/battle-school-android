@@ -6,6 +6,7 @@ import com.umc.battles.ui.main.board.BoardFragment.Companion.board_all
 import com.umc.battles.ui.main.board.BoardFragment.Companion.board_hot
 import com.umc.battles.ui.main.board.BoardFragment.Companion.board_school
 import com.umc.battles.ui.main.board.BoardFragment.Companion.board_tag
+import com.umc.battles.ui.main.board.WritingActivity
 
 class BoardActivity : BaseActivity<ActivityBoardBinding>(ActivityBoardBinding::inflate) {
 
@@ -16,6 +17,7 @@ class BoardActivity : BaseActivity<ActivityBoardBinding>(ActivityBoardBinding::i
     }
 
     private fun initView() {
+        initButton()
         binding.tvBoardTitle.text = when (tag) {
             board_all -> "전체게시판"
             board_school -> "인하대게시판"
@@ -24,6 +26,11 @@ class BoardActivity : BaseActivity<ActivityBoardBinding>(ActivityBoardBinding::i
                 finish()
                 ""
             }
+        }
+    }
+    private fun initButton(){
+        binding.fabNewBulletin.setOnClickListener{
+            startNextActivity(WritingActivity::class.java)
         }
     }
 }
