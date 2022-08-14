@@ -1,49 +1,36 @@
 package com.umc.battles.ui.main.profile.editprofile
 
-import android.app.Activity
-import android.content.Intent
 import android.net.Uri
-import android.os.Bundle
-import android.util.Log
-import androidx.appcompat.app.AppCompatActivity
+import androidx.activity.result.contract.ActivityResultContracts
 import com.bumptech.glide.Glide
-import com.umc.battles.R
 import com.umc.battles.databinding.ActivityEditProfileBinding
+import com.umc.battles.ui.BaseActivity
 
-class EditProfileActivity : AppCompatActivity() {
+class EditProfileActivity :
+    BaseActivity<ActivityEditProfileBinding>(ActivityEditProfileBinding::inflate) {
+
+    private val getContent =
+        registerForActivityResult(ActivityResultContracts.GetContent()) { uri: Uri? ->
+            try {
+                Glide.with(this).load(uri).into(binding.ivProfileImage)
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
 
     private val OPEN_GALLERY = 1
-    lateinit var binding: ActivityEditProfileBinding
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = ActivityEditProfileBinding.inflate(layoutInflater)
-        setContentView(R.layout.activity_edit_profile)
-        binding.cameraBackground.setOnClickListener { openGallery() }
+    override fun initAfterBinding() {
+        initView()
     }
 
-    private fun openGallery() {
-        val intent: Intent = Intent(Intent.ACTION_GET_CONTENT)
-        intent.type = "image/*"
-        startActivityForResult(intent, OPEN_GALLERY)
+    private fun initView() {
+        initButton()
     }
 
-    @Override
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-
-        if (resultCode == Activity.RESULT_OK) {
-            if (requestCode == OPEN_GALLERY) {
-                var currentImageUrl: Uri? = data?.data
-                try {
-                    Glide.with(this).load(currentImageUrl).into(binding.ivProfile)
-                } catch (e: Exception) {
-                    e.printStackTrace()
-                }
-            }
-        } else {
-            Log.d("ActivityResult", "somthing wrong")
+    private fun initButton() {
+        binding.ivCameraIcon.setOnClickListener {
+            getContent.launch("image/*")
         }
     }
-
 }
 

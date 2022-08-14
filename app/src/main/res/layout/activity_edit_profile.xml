@@ -6,152 +6,170 @@
     android:layout_height="match_parent"
     tools:context=".ui.main.profile.editprofile.EditProfileActivity">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginBottom="250dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@color/transparent"
-            android:minWidth="48dp"
-            android:minHeight="48dp"
-            android:src="@drawable/ic_back" />
-
-        <TextView
-            android:id="@+id/profile_head"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="20dp"
-            android:text="프로필"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </LinearLayout>
-
-    <RelativeLayout
-        android:id="@+id/relativeLayout"
-        android:layout_width="0dp"
-        android:layout_height="220dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+    <ImageView
+        android:id="@+id/iv_back_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="70dp"
+        android:background="@color/transparent"
+        android:minWidth="30dp"
+        android:minHeight="30dp"
+        android:src="@drawable/ic_back"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/profile_head"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="20dp"
+        android:text="프로필"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/iv_back_btn"
+        app:layout_constraintStart_toEndOf="@id/iv_back_btn"
+        app:layout_constraintTop_toTopOf="@id/iv_back_btn" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_profile_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        app:cardCornerRadius="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_back_btn">
 
         <ImageView
-            android:id="@+id/ivProfile"
+            android:id="@+id/iv_profile_image"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_centerInParent="true"
-            android:layout_marginTop="80dp"
             android:background="@color/transparent"
+            android:scaleType="centerCrop"
             android:src="@mipmap/ic_launcher" />
+    </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:id="@+id/iv_camera_icon"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:background="@drawable/ic_round_background"
+        android:elevation="50dp"
+        android:padding="10dp"
+        android:src="@drawable/ic_camera"
+        app:layout_constraintBottom_toBottomOf="@id/cv_profile_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/cv_profile_image" />
+
+    <LinearLayout
+        android:id="@+id/layout_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cv_profile_image">
 
         <TextView
-            android:id="@+id/profile_image"
+            android:id="@+id/tv_profile_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="190dp"
             android:text="이름"
-            android:textColor="@color/black"
+            android:textColor="@color/primary"
             android:textSize="20sp" />
 
-        <Button
-            android:id="@+id/camera_background"
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="240dp"
-            android:layout_marginTop="150dp"
-            android:background="@color/black" />
+            android:layout_centerHorizontal="true"
+            android:text="님, 안녕하세요!"
+            android:textSize="16sp" />
 
-        <ImageView
-            android:id="@+id/camera_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="255dp"
-            android:layout_marginTop="165dp"
-            android:background="@color/transparent"
-            android:src="@drawable/ic_camera" />
-
-    </RelativeLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
-
-        <TextView
-            android:id="@+id/University"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="대학교" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="대학교" />
-
-        <TextView
-            android:id="@+id/Major"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="학과" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="학과" />
-
-        <TextView
-            android:id="@+id/Student_ID"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="학번" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="학번" />
-
-        <TextView
-            android:id="@+id/Birthday"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="생년월일" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="생년월일" />
-
-        <TextView
-            android:id="@+id/Club_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="소속동아리" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="소속동아리" />
     </LinearLayout>
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tl_user_nickname"
+        android:layout_width="0dp"
+        android:layout_height="58dp"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="80dp"
+        app:boxBackgroundColor="@color/transparent"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout_name">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="닉네임" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            app:dividerColor="@color/stroke_gray" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_pencil"
+        app:layout_constraintBottom_toBottomOf="@id/tl_user_nickname"
+        app:layout_constraintEnd_toEndOf="@id/tl_user_nickname"
+        app:layout_constraintTop_toTopOf="@id/tl_user_nickname" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tl_user_university"
+        android:layout_width="0dp"
+        android:layout_height="58dp"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="24dp"
+        app:boxBackgroundColor="@color/transparent"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tl_user_nickname">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="대학교" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            app:dividerColor="@color/stroke_gray" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_pencil"
+        app:layout_constraintBottom_toBottomOf="@id/tl_user_university"
+        app:layout_constraintEnd_toEndOf="@id/tl_user_university"
+        app:layout_constraintTop_toTopOf="@id/tl_user_university" />
+
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="45dp"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginVertical="40dp"
+        android:background="@drawable/btn_background_outlined"
+        android:elevation="10dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:text="확인"
+        android:textColor="@color/primary"
+        android:textSize="16sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
