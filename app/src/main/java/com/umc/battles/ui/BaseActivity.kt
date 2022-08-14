@@ -38,6 +38,10 @@ abstract class BaseActivity<T : ViewBinding>(private val inflate: (LayoutInflate
         startActivity(intent)
     }
 
+    fun startNextActivityWithIntent(intent: Intent) {
+        startActivity(intent)
+    }
+
     fun startActivityWithClear(activity: Class<*>?) {
         val intent = Intent(this, activity)
         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
