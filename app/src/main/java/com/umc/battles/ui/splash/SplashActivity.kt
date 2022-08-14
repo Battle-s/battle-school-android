@@ -8,6 +8,7 @@ import com.umc.battles.data.NetworkState
 import com.umc.battles.databinding.ActivitySplashBinding
 import com.umc.battles.ui.BaseActivity
 import com.umc.battles.ui.auth.LoginActivity
+import com.umc.battles.ui.main.MainActivity
 import com.umc.battles.viewmodel.AuthViewModel
 
 class SplashActivity : BaseActivity<ActivitySplashBinding>(ActivitySplashBinding::inflate) {
@@ -17,11 +18,10 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>(ActivitySplashBinding
     override fun initAfterBinding() {
         viewModelSetting()
         observerSetting()
+        //main 개발을 위한 테스트 코드
+        startActivityWithClear(MainActivity::class.java)
 
-        Handler(Looper.getMainLooper()).postDelayed({
-            startActivityWithClear(LoginActivity::class.java)
-            //authViewModel.autoLogin()
-        }, 1000)
+        Handler(Looper.getMainLooper()).postDelayed({}, 1000)
     }
 
     private fun viewModelSetting() {
