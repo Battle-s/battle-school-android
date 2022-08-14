@@ -29,7 +29,7 @@
             android:name=".ui.profile.ProfileSettingActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.profile.EditProfileActivity"
+            android:name=".ui.main.profile.editprofile.EditProfileActivity"
             android:exported="false" />
         <activity
             android:name=".ui.main.MainActivity"
