@@ -4,6 +4,7 @@ import android.content.Intent
 import android.util.Log
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.activity.viewModels
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -13,6 +14,7 @@ import com.umc.battles.ApplicationClass.Companion.TAG
 import com.umc.battles.databinding.ActivityLoginBinding
 import com.umc.battles.ui.BaseActivity
 import com.umc.battles.ui.auth.bottomsheet.SignUpFragment
+import com.umc.battles.ui.auth.tutorial.TutorialActivity
 import com.umc.battles.ui.main.MainActivity
 
 class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::inflate) {
@@ -29,7 +31,15 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
     private val signUpBottomSheet =
         SignUpFragment().apply { dismissCallback = this@LoginActivity::dismissBottomSheet }
 
+    private val viewModel: AuthViewModel by viewModels()
+
     override fun initAfterBinding() {
+
+        initGoogleLogin()
+    }
+
+    private fun initGoogleLogin() {
+
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestEmail()
             .build()
@@ -42,7 +52,6 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
                 GoogleSignIn.getSignedInAccountFromIntent(result.data)
             handleSignInResult(task)
         }
-
         binding.btnGoogleLogin.setOnClickListener {
             val signIntent: Intent = mGoogleSignInClient.signInIntent
             googleSignResultLauncher.launch(signIntent)
@@ -53,10 +62,10 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
         try {
             val account = completedTask.getResult(ApiException::class.java)
             val email = account?.email.toString()
-            startActivityWithClear(MainActivity::class.java)
+            startActivityWithClear(if (viewModel.signUpFlag) TutorialActivity::class.java else MainActivity::class.java)
         } catch (e: ApiException) {
             Log.e("Google account", "signInResult:failed Code = " + e.statusCode)
-            signUpBottomSheet.show(supportFragmentManager, TAG)
+            doSignUp()
         }
     }
 
@@ -69,6 +78,11 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
         } else {
             Log.e("Google account", "로그인 완료된 상태")
         }
+    }
+
+    private fun doSignUp() {
+        signUpBottomSheet.show(supportFragmentManager, TAG)
+        viewModel.signUpFlag = true
     }
 
     private fun dismissBottomSheet() {

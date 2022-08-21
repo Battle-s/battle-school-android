@@ -7,7 +7,6 @@ import androidx.lifecycle.ViewModelProvider
 import com.umc.battles.data.NetworkState
 import com.umc.battles.databinding.ActivitySplashBinding
 import com.umc.battles.ui.BaseActivity
-import com.umc.battles.ui.auth.LoginActivity
 import com.umc.battles.ui.main.MainActivity
 import com.umc.battles.viewmodel.AuthViewModel
 
