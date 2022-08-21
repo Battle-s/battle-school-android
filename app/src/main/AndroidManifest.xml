@@ -26,7 +26,7 @@
             android:name=".ui.main.board.detail.BoardActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.profile.ProfileSettingActivity"
+            android:name=".ui.auth.tutorial.TutorialActivity"
             android:exported="false" />
         <activity
             android:name=".ui.main.profile.editprofile.EditProfileActivity"
