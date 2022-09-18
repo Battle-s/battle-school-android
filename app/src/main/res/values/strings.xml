@@ -33,4 +33,6 @@
     <string name="fragment_profile">ProfileFragment</string>
     <string name="fragment_battle_join">BattleJoinFragment</string>
     <string name="fragment_club_join">ClubJoinFragment</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
